@@ -10,10 +10,10 @@
     
     <script>
 function enviarDados(){
-        if( document.dados.tx_email.value=="" || document.dados.tx_email.value.indexOf('@')==-1 || document.dados.tx_email.value.indexOf('.')==-1 )
+        if( document.dados.email.value=="" || document.dados.email.value.indexOf('@')==-1 || document.dados.email.value.indexOf('.')==-1 )
 {
-alert( "Preencha campo E-MAIL corretamente!" );
-document.dados.tx_email.focus();
+alert( "Você chama ISSO de e-mail?! Verifique a grafia e lembre-se da estrutura do endereço de e-mail: 'usuario@dominio.com'." );
+document.dados.email.focus();
 return false;
 }
 return true;
@@ -26,7 +26,7 @@ return true;
     <center>
         <div>
 
-            <form class="modal-content animate" action="mensagem.html" method="post" style="border-radius: 20px; background: rgba(200,200,200,0.4);" onsubmit="return enviarDados()">
+            <form class="modal-content animate" action="mensagem.html" method="post" style="width: 70%;height: 89%; " onsubmit="return enviarDados()" name="dados">
                 <div class="title">
                     <center>
                         <h1 style="color:white;">Recuperação de conta</h1>
@@ -35,13 +35,13 @@ return true;
 
                 <div class="container">
                     <p style="font-size: 25px; color: white;">Email</p>
-                    <input type="email" placeholder="Entre com o e-mail da sua conta." name="email" required style="border-radius: 20px;">
+                    <input type="email" placeholder="Entre com o e-mail da sua conta." name="email" required style="border-radius: 20px; ">
 
                     <button type="submit">Enviar link de recuperação</button>
 
                 </div>
 
-                <div class="container" style="border-radius: 20px; background: rgba(200,200,200,0.2);">
+                <div class="container" style="border-radius: 20px;">
                    <a href="index.html"> <button type="button">Voltar</button> </a>
                 </div>
             </form>
