@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Validação de formulários - Com Java Script</title>
+    <title>DotPet - Cadastre-se</title>
     <link rel="stylesheet" href="css/stylesheet.css" type="text/css" charset="utf-8" />
 </head>
-<body>
+<body style="background-image: url(img/signupdoggo.jpg);background-size: cover;background-repeat: no-repeat;">
  <script language="JavaScript" >
 function enviardados(){
   
@@ -43,19 +43,14 @@ alert( "Senha inválida! Lembre que sua senha deve conter de 8 a 16 caracteres" 
 document.dados.tx_datanasc.focus();
 return false;
 }
-  
-return true;
-}
-     
-     
 
-function validarSenha(){ 
 
-    senha = document.dados.tx_senia.value;
+ 
+senha = document.dados.tx_senia.value;
 
-    senhaRepetida = document.dados.tx_passconf.value;
+senhaRepetida = document.dados.tx_passconf.value;
 
-    if (senha != senhaRepetida){
+if (senha != senhaRepetida){
 
         alert("Repita a senha corretamente");
 
@@ -63,61 +58,70 @@ function validarSenha(){
 
         return false;
 
-    }
+}
+
+return true;
+}
+     
+     
 
 }
 
 </script>
+    
+        <img src="logo/.Pet%20logo.png" style="position: absolute; top:auto; left:3%;width:5%;"> 
 
-<form action="pagina de ação" method="post" name="dados" onSubmit="return validarSenha();" style="font-family: google_sansregular, sans-serif">
-  <table width="588" border="0" align="center" >
+ 
+     <div class="form-area" >
+       <center class="animate"><h3 style="color: white;"> Cadastre-se </h3></center>
+
+<form action="pagina de ação" method="post" name="dados" onsubmit="return enviardados()" style="font-family: google_sansregular, sans-serif; color: white;">
+  <table align="center" class="animate">
     <tr>
-      <td width="118">Nome completo:</td>
-      <td width="460">
-        <input name="tx_nome" type="text" class="formbutton" id="tx_nome" size="52" maxlength="150">
+      <td>Nome completo:</td>
+      <td>
+        <input name="tx_nome" type="text" class="formbutton" id="tx_nome" size="52" maxlength="150" placeholder="Para começar, seu nome completo.">
       </td>
     </tr>
     <tr>
       <td>E-mail:</td>
       <td>
-        <input name="tx_email" type="text" id="tx_email" size="52" maxlength="150" class="formbutton"></td>
+        <input name="tx_email" type="text" id="tx_email" size="52" maxlength="150" class="formbutton" placeholder="Informe aqui seu e-mail."></td>
     </tr>
        <tr>
-      <td width="118">Data de Nascimento:</td>
-      <td width="460">
-        <input name="tx_datanasc" type="date" class="formbutton" id="tx_datanasc" size="52" maxlength="150" min="1890-01-01" max="2001-12-31">
+      <td>Data de Nascimento:</td>
+      <td>
+        <input name="tx_datanasc" type="date" class="formbutton" id="tx_datanasc" size="52" maxlength="150" min="1890-01-01" max="2001-12-31" placeholder="Informe sua data de nascimento.">
       </td>
     </tr>
        <tr>
-      <td width="118">Endereço:</td>
-      <td width="460">
-        <input name="tx_ende" type="text" class="formbutton" id="tx_ende" size="52" maxlength="150">
+      <td>Endereço:</td>
+      <td>
+        <input name="tx_ende" type="text" class="formbutton" id="tx_ende" size="52" maxlength="150" placeholder="Informe seu local de residência.">
       </td>
     </tr>
            <tr>
-      <td width="118">Contato:</td>
-      <td width="460">
-        <input name="tx_telefone" type="number" class="formbutton" id="tx_telefone" size="52" maxlength="150">
+      <td>Contato:</td>
+      <td>
+        <input name="tx_telefone" type="number" class="formbutton" id="tx_telefone" size="52" maxlength="150"  min='10' max='11' placeholder="Insira seu número de contato.">
       </td>
     </tr>
        <tr>
-      <td width="118">Usuário: </td>
-      <td width="460">
-        <input name="tx_user" type="uname" class="formbutton" id="tx_user" size="52" maxlength="150" min='10' max='11'>
+      <td>Usuário: </td>
+      <td>
+        <input name="tx_user" type="uname" class="formbutton" id="tx_user" size="52" maxlength="150" placeholder="Crie um nome de usuário">
       </td>
       </tr>
          <tr>
-      <td width="118">Senha: </td>
-      <td width="460">
-        <input name="tx_senia" type="password" class="formbutton" id="tx_senia" size="52" maxlength="150">
+      <td>Senha: </td>
+      <td>
+        <input name="tx_senia" type="password" class="formbutton" id="tx_senia" size="52" maxlength="150" placeholder="Crie aqui sua senha.">
       </td>
-      <td height="85"><p><strong><font face="Verdana, Arial, Helvetica, sans-serif"><font size="1">
-      </font></font></strong></p></td>
     </tr>
                  <tr>
       <td width="118">Confirmar senha:</td>
       <td width="460">
-        <input name="tx_passconf" type="password" class="formbutton" id="tx_passconf" size="52" maxlength="150">
+        <input name="tx_passconf" type="password" class="formbutton" id="tx_passconf" size="52" maxlength="150" placeholder="Confirme a senha criada">
       </td>
     </tr>
     <tr>
@@ -127,6 +131,8 @@ function validarSenha(){
       </td>
     </tr>
   </table>
-</form> 
+</form>
+    </div>
+    <footer></footer>
 </body>
 </html>

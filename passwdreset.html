@@ -7,34 +7,42 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="logo\.Pet favicon.png" type="image/png" />
     <link rel="stylesheet" href="css/stylesheet.css" type="text/css" charset="utf-8" />
-
+    
     <script>
+function enviarDados(){
+        if( document.dados.tx_email.value=="" || document.dados.tx_email.value.indexOf('@')==-1 || document.dados.tx_email.value.indexOf('.')==-1 )
+{
+alert( "Preencha campo E-MAIL corretamente!" );
+document.dados.tx_email.focus();
+return false;
+}
+return true;
+        }
     </script>
 </head>
 
-<body>
-    <a ref="" class="logo"><img src="logo/white logo minimal.png" style="transform: scale(0.5);"></a>
+<body style="background-image: url(img/cat_support.jpeg); background-size:  cover; background-position: top; background-repeat: no-repeat;">
+    <a href="" class="logo"><img src="logo/white logo minimal.png" style="transform: scale(0.5);"></a>
     <center>
         <div>
 
-            <form class="modal-content animate" action="message.html" method="post">
+            <form class="modal-content animate" action="mensagem.html" method="post" style="border-radius: 20px; background: rgba(200,200,200,0.4);" onsubmit="return enviarDados()">
                 <div class="title">
-                    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
                     <center>
-                        <h1>Recuperação de conta</h1>
+                        <h1 style="color:white;">Recuperação de conta</h1>
                     </center>
                 </div>
 
                 <div class="container">
-                    <p>Email</p>
-                    <input type="email" placeholder="Entre com o e-mail da sua conta." name="email" required>
+                    <p style="font-size: 25px; color: white;">Email</p>
+                    <input type="email" placeholder="Entre com o e-mail da sua conta." name="email" required style="border-radius: 20px;">
 
                     <button type="submit">Enviar link de recuperação</button>
 
                 </div>
 
-                <div class="container" style="background-color:#f1f1f1">
-                    <button type="button">Voltar</button>
+                <div class="container" style="border-radius: 20px; background: rgba(200,200,200,0.2);">
+                   <a href="index.html"> <button type="button">Voltar</button> </a>
                 </div>
             </form>
         </div>
