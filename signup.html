@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Validação de formulários - Com Java Script</title>
+    <link rel="stylesheet" href="css/stylesheet.css" type="text/css" charset="utf-8" />
+</head>
+<body>
+ <script language="JavaScript" >
+function enviardados(){
+  
+if(document.dados.tx_nome.value=="" || document.dados.tx_nome.value.length < 8)
+{
+alert( "Preencha campo NOME corretamente!" );
+document.dados.tx_nome.focus();
+return false;
+}
+  
+  
+if( document.dados.tx_email.value=="" || document.dados.tx_email.value.indexOf('@')==-1 || document.dados.tx_email.value.indexOf('.')==-1 )
+{
+alert( "Preencha campo E-MAIL corretamente!" );
+document.dados.tx_email.focus();
+return false;
+}
+
+if( document.dados.tx_ende.value=="" || document.dados.tx_ende.value.length < 10)
+{
+alert( "Dados inseridos inválidos! Lembre-se que o Endereço deve conter pelo menos 10 caracteres." );
+document.dados.tx_ende.focus();
+return false;
+}
+  
+if (document.dados.tx_telefone.value=="" || document.dados.tx_telefone.value.length < 10)
+{
+alert( "O telefone informado não é valido. Tente novamente!" );
+document.dados.tx_telefone.focus();
+return false;
+}
+  
+if (document.dados.tx_senia.value.length < 8 || document.dados.tx_senia.value.length > 16)
+{
+alert( "Senha inválida! Lembre que sua senha deve conter de 8 a 16 caracteres" );
+document.dados.tx_datanasc.focus();
+return false;
+}
+  
+return true;
+}
+     
+     
+
+function validarSenha(){ 
+
+    senha = document.dados.tx_senia.value;
+
+    senhaRepetida = document.dados.tx_passconf.value;
+
+    if (senha != senhaRepetida){
+
+        alert("Repita a senha corretamente");
+
+        document.formulario.repetir_passconf.focus();  
+
+        return false;
+
+    }
+
+}
+
+</script>
+
+<form action="pagina de ação" method="post" name="dados" onSubmit="return validarSenha();" style="font-family: google_sansregular, sans-serif">
+  <table width="588" border="0" align="center" >
+    <tr>
+      <td width="118">Nome completo:</td>
+      <td width="460">
+        <input name="tx_nome" type="text" class="formbutton" id="tx_nome" size="52" maxlength="150">
+      </td>
+    </tr>
+    <tr>
+      <td>E-mail:</td>
+      <td>
+        <input name="tx_email" type="text" id="tx_email" size="52" maxlength="150" class="formbutton"></td>
+    </tr>
+       <tr>
+      <td width="118">Data de Nascimento:</td>
+      <td width="460">
+        <input name="tx_datanasc" type="date" class="formbutton" id="tx_datanasc" size="52" maxlength="150" min="1890-01-01" max="2001-12-31">
+      </td>
+    </tr>
+       <tr>
+      <td width="118">Endereço:</td>
+      <td width="460">
+        <input name="tx_ende" type="text" class="formbutton" id="tx_ende" size="52" maxlength="150">
+      </td>
+    </tr>
+           <tr>
+      <td width="118">Contato:</td>
+      <td width="460">
+        <input name="tx_telefone" type="number" class="formbutton" id="tx_telefone" size="52" maxlength="150">
+      </td>
+    </tr>
+       <tr>
+      <td width="118">Usuário: </td>
+      <td width="460">
+        <input name="tx_user" type="uname" class="formbutton" id="tx_user" size="52" maxlength="150" min='10' max='11'>
+      </td>
+      </tr>
+         <tr>
+      <td width="118">Senha: </td>
+      <td width="460">
+        <input name="tx_senia" type="password" class="formbutton" id="tx_senia" size="52" maxlength="150">
+      </td>
+      <td height="85"><p><strong><font face="Verdana, Arial, Helvetica, sans-serif"><font size="1">
+      </font></font></strong></p></td>
+    </tr>
+                 <tr>
+      <td width="118">Confirmar senha:</td>
+      <td width="460">
+        <input name="tx_passconf" type="password" class="formbutton" id="tx_passconf" size="52" maxlength="150">
+      </td>
+    </tr>
+    <tr>
+      <td height="22"></td>
+      <td>
+        <input name="Submit" type="submit" value="Enviar dados" class="button" id="botaum">
+      </td>
+    </tr>
+  </table>
+</form> 
+</body>
+</html>

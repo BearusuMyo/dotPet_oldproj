@@ -7,9 +7,29 @@
 		<link rel="shortcut icon" href="logo\.Pet favicon.png" type="image/png"/>
         <link rel="stylesheet" href="css/stylesheet.css" type="text/css" charset="utf-8" />
         
-        <script>
+ <script language="JavaScript" >
+function enviardados(){
+  
+if(document.dados.tx_nome.value=="" || document.dados.tx_nome.value.length < 8)
+{
+alert( "Usuário incorreto, favor verifique a grafia e tente novamente!" );
+document.dados.tx_nome.focus();
+return false;
+}
+  
+  
+if( document.dados.tx_email.value=="" || document.dados.tx_email.value.length < 8 )
+{
+alert( "Senha inválida, tente novamente!" );
+document.dados.tx_email.focus();
+return false;
+}
 
-        </script>
+
+return true;
+}
+  
+</script>
     </head>
     <body> 
 
@@ -29,34 +49,38 @@
     </div>
 <div id="id01" class="modal">
   
-  <form class="modal-content animate" action="#" method="post">
-    <div class="title">
-      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <center><h1>Login</h1></center>
-    </div>
+<form action="pagina de ação" method="post" name="dados" onSubmit="return enviardados();" class='modal-content animate' >
+  <table width="588" border="0" align="center" >
+    <tr>
+      <td width="118"><font size="1" face="google_sansmedium, sans-serif">Login</font></td>
+      <td width="460">
+        <input name="tx_nome" type="text" class="formbutton" id="tx_nome" size="52" maxlength="150">
+      </td>
+    </tr>
+    <tr>
+      <td><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Senha:</font></td>
+      <td><font size="2">
+        <input name="tx_email" type="password" id="tx_email" size="52" maxlength="150" class="formbutton">
+      </font></td>
+    </tr>
+    <tr>
+      <td height="85"><p><strong><font face="Verdana, Arial, Helvetica, sans-serif"><font size="1">
+      </font></font></strong></p></td>
+    </tr>
+    <tr>
+      <td height="22"></td>
+      <td>
+        <input name="Submit" type="submit"  class="formobjects" value="Enviar dados">
+  <input name="Reset" type="reset" class="formobjects" value="Redefinir">
+      </td>
+    </tr>
+  </table>
+</form> 
 
-    <div class="container">
-      <label for="uname"><b>Usuario</b></label>
-      <input type="text" placeholder="Insira seu usuario" name="uname" required>
-
-      <label for="psw"><b>Senha</b></label>
-      <input type="password" placeholder="Insira sua senha" name="psw" required>
-        
-      <button type="submit">Login</button>
-      <label>
-        <input type="checkbox" checked="checked" name="remember"> Salvar informacoes de login
-      </label>
-    </div>
-
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Voltar</button>
-      <p class="psw">Esqueceu sua senha? <a href="passwdreset.html">Recuperar conta</a></p>
-    </div>
-  </form>
 </div>
     <div>
-    <h3>Ainda nao possui conta</h3>
-    <h5></h5>
+    <h3>Ainda nao possui cadastro?</h3>
+    <h5>Inscreva-se <a href="signup.html">aqui</a>!</h5>
     </div>
 
 <script>

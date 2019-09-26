@@ -89,13 +89,14 @@ body {
     font-family: google_sansregular, sans-serif, goole_sansmedium, bold;}
 
 /* Full-width input fields */
-input[type=text], input[type=password] {
+input[type=text], input[type=password], input[type=number], input[type=date], input[type=password], input[type=uname], input[type=email]{
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
   box-sizing: border-box;
+    font-family: google_sansmedium,sans-serif;
 }
 
 /* Set a style for all buttons */
@@ -109,6 +110,19 @@ button {
   cursor: pointer;
   width: 100%;
 }
+
+.button {
+  background-color: dodgerblue;
+  color: white;
+  padding: 16px 26px;
+  margin: 8px 0;
+  align-content: center;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+    font-family: google_sansmedium,sans-serif;
+}
+
 
 button:hover {
   opacity: 0.8;
