@@ -10,7 +10,7 @@ function enviardados(){
   
 if(document.dados.tx_nome.value=="" || document.dados.tx_nome.value.length < 8)
 {
-alert( "Preencha campo NOME corretamente!" );
+alert( "Há alguma coisa estranha com o nome dado. Lembre-se que você precisa informar seu nome completo, certo? Por favor, tente novamente!" );
 document.dados.tx_nome.focus();
 return false;
 }
@@ -18,7 +18,7 @@ return false;
   
 if( document.dados.tx_email.value=="" || document.dados.tx_email.value.indexOf('@')==-1 || document.dados.tx_email.value.indexOf('.')==-1 )
 {
-alert( "Preencha campo E-MAIL corretamente!" );
+alert( "Isso pode ser qualquer coisa, menos um endereço de e-mail. Tente novamente!!" );
 document.dados.tx_email.focus();
 return false;
 }
@@ -30,7 +30,7 @@ document.dados.tx_ende.focus();
 return false;
 }
   
-if (document.dados.tx_telefone.value=="" || document.dados.tx_telefone.value.length < 10)
+if (document.dados.tx_telefone.value=="" || document.dados.tx_telefone.value.length > 11)
 {
 alert( "O telefone informado não é valido. Tente novamente!" );
 document.dados.tx_telefone.focus();
@@ -43,9 +43,6 @@ alert( "Senha inválida! Lembre que sua senha deve conter de 8 a 16 caracteres" 
 document.dados.tx_datanasc.focus();
 return false;
 }
-
-
- 
 senha = document.dados.tx_senia.value;
 
 senhaRepetida = document.dados.tx_passconf.value;
@@ -54,22 +51,18 @@ if (senha != senhaRepetida){
 
         alert("Repita a senha corretamente");
 
-        document.formulario.repetir_passconf.focus();  
+        document.dados.tx_passconf.focus();  
 
         return false;
-
 }
 
 return true;
 }
      
-     
-
-}
 
 </script>
     
-        <img src="logo/.Pet%20logo.png" style="position: absolute; top:auto; left:3%;width:5%;"> 
+        <a href="index.html"><img src="logo/.Pet%20logo.png" style="position: absolute; top:auto; left:3%;width:5%;"></a> 
 
  
      <div class="form-area" >
@@ -103,7 +96,7 @@ return true;
            <tr>
       <td>Contato:</td>
       <td>
-        <input name="tx_telefone" type="number" class="formbutton" id="tx_telefone" size="52" maxlength="150"  min='10' max='11' placeholder="Insira seu número de contato.">
+        <input name="tx_telefone" type="number" class="formbutton" id="tx_telefone" size="52" maxlength="150"  minlength='10' placeholder="Insira seu número de contato com DDD.">
       </td>
     </tr>
        <tr>

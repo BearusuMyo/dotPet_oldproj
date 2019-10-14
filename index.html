@@ -12,7 +12,7 @@ function enviardados(){
   
 if(document.dados.tx_nome.value=="" || document.dados.tx_nome.value.length < 8)
 {
-alert( "Usuário incorreto, favor verifique a grafia e tente novamente!" );
+alert( "Usuário incorreto ou vazio, favor verifique e tente novamente!" );
 document.dados.tx_nome.focus();
 return false;
 }
@@ -34,6 +34,29 @@ if (document.dados.tx_email.value.length < 8 || document.dados.tx_email.value.le
 }
 return true;
 }
+     
+
+     
+mybutton = document.getElementById("topo");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}     
+     
+     
 </script>
     </head>
     <body> 
@@ -57,7 +80,7 @@ return true;
 <form action="pagina de ação" method="post" name="dados" onSubmit="return enviardados();" class='modal-content animate' >
   <table align="center" style="color: white">
     <tr>
-      <td>Login:</td>
+      <td>Usuário:</td>
       <td>
         <input name="tx_nome" type="text" class="formbutton" id="tx_nome" size="52" maxlength="150">
       </td>
@@ -90,9 +113,15 @@ return true;
     </div>
         
 <footer style="position: absolute;bottom: -400px;">
-  <p>Espaço reservado para informações pertinentes a pagina</p>
-  <p>Olha isso: <a href="https://pa1.narvii.com/7108/330b04fb82aa9af5446319758caee80ebc975670r1-400-411_hq.gif">
-  Veja o esqueleto</a>.</p>
+ <div class="navbar">
+     <a>Mapa do site</a>
+  <a href="index.html" class="active">Página Inicial</a>
+  <a href="passwdreset.html">Recuperação de Conta</a>
+  <a href="signup.html">Cadastre-se</a>
+  <a onclick="document.getElementById('id01').style.display='block'">Login</a>
+  <a id="topo" onclick="topFunction()">Voltar para o topo</a>
+    
+</div>
 </footer>
 <script>
 // Get the modal
