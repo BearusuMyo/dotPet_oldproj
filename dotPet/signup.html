@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+    <title>DotPet - Cadastre-se</title>
+    <link rel="stylesheet" href="css/stylesheet.css" type="text/css" charset="utf-8" />
+</head>
+<body style="background-image: url(img/signupdoggo.jpg);background-size: cover;background-repeat: no-repeat;">
+
+
+<script language="JavaScript">
+function enviardados(){
+  
+if(document.dados.tx_nome.value=="" || document.dados.tx_nome.value.length < 8)
+{
+alert( "Há alguma coisa estranha com o nome dado. Lembre-se que você precisa informar seu nome completo, certo? Por favor, tente novamente!" );
+document.dados.tx_nome.focus();
+return false;
+}
+  
+  
+if( document.dados.tx_email.value=="" || document.dados.tx_email.value.indexOf('@')==-1 || document.dados.tx_email.value.indexOf('.')==-1 )
+{
+alert( "Isso pode ser qualquer coisa, menos um endereço de e-mail. Tente novamente!!" );
+document.dados.tx_email.focus();
+return false;
+}
+
+if( document.dados.tx_ende.value=="" || document.dados.tx_ende.value.length < 10)
+{
+alert( "Dados inseridos inválidos! Lembre-se que o Endereço deve conter pelo menos 10 caracteres." );
+document.dados.tx_ende.focus();
+return false;
+}
+  
+if (document.dados.tx_telefone.value=="" || document.dados.tx_telefone.value.length > 11)
+{
+alert( "O telefone informado não é valido. Tente novamente!" );
+document.dados.tx_telefone.focus();
+return false;
+}
+  
+if (document.dados.tx_senha.value.length < 8 || document.dados.tx_senha.value.length > 16)
+{
+alert( "Senha inválida! Lembre que sua senha deve conter de 8 a 16 caracteres" );
+document.dados.tx_datanasc.focus();
+return false;
+}
+senha = document.dados.tx_senha.value;
+
+senhaRepetida = document.dados.tx_passconf.value;
+
+if (senha != senhaRepetida){
+
+        alert("Repita a senha corretamente");
+
+        document.dados.tx_passconf.focus();  
+
+        return false;
+}
+
+return true;
+}
+     
+
+</script>
+
+
+<a href="index.html"><img src="logo/.Pet_logo.png" style="position: absolute; top:auto; left:3%;width:5%;"></a>
+      <div class="form-area" >
+        <center class="animate"><h3 style="color: white;"> Cadastre-se </h3></center>
+
+<form action="cadastrando.php" method="post" name="cadastro" onSubmit="return enviardados();" style="font-family: google_sansregular, sans-serif; color: white;">
+  <table align="center" class="animate">
+    <tr>
+      <td>Nome completo:</td>
+      <td>
+        <input name="tx_nome" type="text" class="formbutton" id="tx_nome" size="52" maxlength="150" placeholder="Para começar, seu nome completo.">
+      </td>
+    </tr>
+    <tr>
+      <td>E-mail:</td>
+      <td>
+        <input name="tx_email" type="text" id="tx_email" size="52" maxlength="150" class="formbutton" placeholder="Informe aqui seu e-mail."></td>
+    </tr>
+       <tr>
+      <td>Data de Nascimento:</td>
+      <td>
+        <input name="tx_datanasc" type="date" class="formbutton" id="tx_datanasc" size="52" maxlength="150" min="1890-01-01" max="2001-12-31" placeholder="Informe sua data de nascimento.">
+      </td>
+    </tr>
+       <tr>
+      <td>Endereço:</td>
+      <td>
+        <input name="tx_ende" type="text" class="formbutton" id="tx_ende" size="52" maxlength="150" placeholder="Informe seu local de residência.">
+      </td>
+    </tr>
+           <tr>
+      <td>Contato:</td>
+      <td>
+        <input name="tx_telefone" type="number" class="formbutton" id="tx_telefone" size="52" maxlength="150"  minlength='10' placeholder="Insira seu número de contato com DDD.">
+      </td>
+    </tr>
+       <tr>
+      <td>Usuário: </td>
+      <td>
+        <input name="tx_user" type="uname" class="formbutton" id="tx_user" size="52" maxlength="150" placeholder="Crie um nome de usuário">
+      </td>
+      </tr>
+         <tr>
+      <td>Senha: </td>
+      <td>
+        <input name="tx_senha" type="password" class="formbutton" id="tx_senha" size="52" maxlength="150" placeholder="Crie aqui sua senha.">
+      </td>
+    </tr>
+                 <tr>
+      <td width="118">Confirmar senha:</td>
+      <td width="460">
+        <input name="tx_passconf" type="password" class="formbutton" id="tx_passconf" size="52" maxlength="150" placeholder="Confirme a senha criada">
+      </td>
+    </tr>
+    <tr>
+      <td height="22"></td>
+      <td>
+        <input name="submit" type="submit" value="Enviar dados" class="button" id="botaum">
+      </td>
+    </tr>
+  </table>
+</form>
+    </div>
+    <footer></footer>
+</body>
+</html>
