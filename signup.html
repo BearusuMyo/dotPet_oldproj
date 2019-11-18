@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html>
-<meta charset="utf-8">
 <head>
     <title>DotPet - Cadastre-se</title>
     <link rel="stylesheet" href="css/stylesheet.css" type="text/css" charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+
+
 </head>
 <body style="background-image: url(img/signupdoggo.jpg);background-size: cover;background-repeat: no-repeat;">
 
 
 <script language="JavaScript">
 function enviardados(){
-  
+
 if(document.dados.tx_nome.value=="" || document.dados.tx_nome.value.length < 8)
 {
 alert( "Há alguma coisa estranha com o nome dado. Lembre-se que você precisa informar seu nome completo, certo? Por favor, tente novamente!" );
 document.dados.tx_nome.focus();
 return false;
 }
-  
-  
+
+
 if( document.dados.tx_email.value=="" || document.dados.tx_email.value.indexOf('@')==-1 || document.dados.tx_email.value.indexOf('.')==-1 )
 {
 alert( "Isso pode ser qualquer coisa, menos um endereço de e-mail. Tente novamente!!" );
@@ -32,14 +35,14 @@ alert( "Dados inseridos inválidos! Lembre-se que o Endereço deve conter pelo m
 document.dados.tx_ende.focus();
 return false;
 }
-  
+
 if (document.dados.tx_telefone.value=="" || document.dados.tx_telefone.value.length > 11)
 {
 alert( "O telefone informado não é valido. Tente novamente!" );
 document.dados.tx_telefone.focus();
 return false;
 }
-  
+
 if (document.dados.tx_senha.value.length < 8 || document.dados.tx_senha.value.length > 16)
 {
 alert( "Senha inválida! Lembre que sua senha deve conter de 8 a 16 caracteres" );
@@ -54,14 +57,14 @@ if (senha != senhaRepetida){
 
         alert("Repita a senha corretamente");
 
-        document.dados.tx_passconf.focus();  
+        document.dados.tx_passconf.focus(); 
 
         return false;
 }
 
 return true;
 }
-     
+
 
 </script>
 
@@ -70,7 +73,7 @@ return true;
       <div class="form-area" >
         <center class="animate"><h3 style="color: white;"> Cadastre-se </h3></center>
 
-<form action="cadastrando.php" method="post" name="cadastro" onsubmit="return enviardados();" style="font-family: google_sansregular, sans-serif; color: white;">
+<form action="cadastrando.php" method="post" name="cadastro" style="font-family: google_sansregular, sans-serif; color: white;" onsubmit="return enviardados();">
   <table align="center" class="animate">
     <tr>
       <td>Nome completo:</td>
@@ -122,7 +125,7 @@ return true;
     <tr>
       <td height="22"></td>
       <td>
-        <input name="submit" type="submit" value="Enviar dados" class="button" id="botaum">
+        <input name="submit" type="submit" value="Enviar dados" class="button" id="botaum" onsubmit="return enviardados();">
       </td>
     </tr>
   </table>

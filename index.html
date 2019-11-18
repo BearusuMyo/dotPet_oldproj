@@ -4,28 +4,29 @@
         <title>DotPet</title>
         <meta charset="utf-8">
         <link rel="icon" href="favicon.ico" type="image/x-icon"/>
-		<link rel="shortcut icon" href="logo\.Pet favicon.png" type="image/png"/>
+		     <link rel="shortcut icon" href="logo\dotpetmain.png" type="image/png"/>
         <link rel="stylesheet" href="css/stylesheet.css" type="text/css" charset="utf-8" />
-        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
  <script language="JavaScript" >
 function enviardados(){
-  
+
 if(document.dados.tx_nome.value=="" || document.dados.tx_nome.value.length < 8)
 {
 alert( "Usuário incorreto ou vazio, favor verifique e tente novamente!" );
 document.dados.tx_nome.focus();
 return false;
 }
-  
-  
-if( document.dados.tx_email.value=="" ) 
+
+
+if( document.dados.tx_email.value=="" )
 {
 alert( "Por favor, insire sua senha!!" );
 document.dados.tx_email.focus();
 return false;
 }
 
-    
+
 if (document.dados.tx_email.value.length < 8 || document.dados.tx_email.value.length >16)
 {
     alert("Senha incorreta! Lembre-se que sua senha cadastrada possui de 8 à 16 caracteres.");
@@ -34,9 +35,9 @@ if (document.dados.tx_email.value.length < 8 || document.dados.tx_email.value.le
 }
 return true;
 }
-     
 
-     
+
+
 mybutton = document.getElementById("topo");
 
 // When the user scrolls down 20px from the top of the document, show the button
@@ -54,30 +55,30 @@ function scrollFunction() {
 function topFunction() {
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-}     
-     
-     
+}
+
+
 </script>
     </head>
-    <body> 
+    <body>
 
-        <div style="background-color: ghostwhite;background-image: url(img/testdog_new.png); background-repeat: no-repeat;background-size: cover; position: relative; left: 5px;top: 5px;height: 600px;">
-        <a ref="" class="logo" style="position: absolute; top: 15px; left: 15px;"><strong>Dot</strong><span>Pet</span></a>
-        <li><img src='logo/white%20logo.png' style="position: absolute; top:300px;left: 100px;"></li>
-        
-        
+        <div class="bg2">
+        <a ref="" class="logo" ><strong>Dot</strong><span>Pet</span></a>
+        <a id="logomark"><img src='logo/white%20logo.png' style="position: absolute; top:300px;left: 100px;"></a>
+
+
             </div>
-        
+
 <center>
-<div style="position: absolute;top: 300px; left: 900px;background-color: ghostwhite; border: 10px solid #F8F8FF; border-radius: 20px;">
+<div class="loginwindow">
         <h3>Olá, você está logado como visitante.</h3>
     <h5>Para fazer login, pressione o botão abaixo:</h5>
 
     <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
     </div></center>
 <div id="id01" class="modal">
-  
-<form action="logincheck.php" method="post" name="dados" class='modal-content animate' onsubmit="return enviardados();" >
+
+<form action="logincheck.php" method="post" name="dados" class='modal-content animate'>
   <table align="center" style="color: white">
     <tr>
       <td>Usuário:</td>
@@ -94,14 +95,14 @@ function topFunction() {
     <tr>
       <td></td>
       <td>
-        <input name="submit" type="submit" class="button" value="Login">
+        <input name="submit" type="submit" class="button" value="Login" onsubmit="return enviardados();">
 
   <input name="Reset" type="reset" class="button" value="Limpar">
           <center><a href="passwdreset.html">Recuperar sua senha.</a></center>
       </td>
     </tr>
   </table>
-</form> 
+</form>
 
 </div>
     <div class="banner">
@@ -111,7 +112,7 @@ function topFunction() {
     <h2>Inscreva-se <a href="signup.html">aqui</a>!</h2>
     </center>
     </div>
-        
+
 <footer style="position: absolute;bottom: -400px;">
  <div class="navbar">
      <a>Mapa do site</a>
@@ -120,7 +121,7 @@ function topFunction() {
   <a href="signup.html">Cadastre-se</a>
   <a onclick="document.getElementById('id01').style.display='block'">Login</a>
   <a id="topo" onclick="topFunction()">Voltar para o topo</a>
-    
+
 </div>
 </footer>
 <script>
@@ -134,6 +135,6 @@ window.onclick = function(event) {
     }
 }
 </script>
-       
+
     </body>
 </html>
